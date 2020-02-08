@@ -1,0 +1,18 @@
+.chat-side
+  .side-bar
+    .side-bar__name-box
+      .side-bar__name-box__name
+        akira
+      .side-bar__name-box__icons
+        .side-bar__name-box__icons__new-group
+        = link_to "#" do
+          = icon('fas', 'edit', class: "pen") 
+        .side-bar__name-box__icons_edit-user
+        = link_to "#" do
+          = icon('fas', 'cog', class: "gia")
+  .groups
+    = link_to "#", class:"group-box" do
+      .group-box__group-name
+        tech-camp
+      .group-box__text
+        まだメッセージがありません
