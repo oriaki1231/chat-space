@@ -1,1 +1,38 @@
-<チャット画面>
+.chat-main
+  .group-info
+    .group-info__group-box
+      .group-info__group-box__group-name
+        akiaki
+      .group-info__group-box__member-list
+        member :
+        .group-info__group-box__member-list__member
+          aki
+    .group-info__edit
+      =link_to "#", class:"edit-btn" do
+        .edit-btn
+          Edit
+  .messages
+    .message
+      .message__box
+        .message__box__name
+          aki
+        .message__box__date
+          2020/02/08(Sat) 16:32:56
+      .message__text
+        元気ですか？
+    .message
+      .message__box
+        .message__box__name
+          aki
+        .message__box__date
+          2020/02/08(Sat) 16:32:56
+      .message__text
+        元気ですか？
+  .form
+    %form.new-message
+      .input-box
+        %input{type:"text", class:"input-box__text", placeholder:"メッセージを入力してください"}
+        %label{class:"input-box__image"}
+          = icon("fas","image")
+          %input{type:"file", class:"input-box__image__file"}
+      %input{type:"submit", class:"submit-btn", value:"Send"}
