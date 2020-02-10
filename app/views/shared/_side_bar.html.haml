@@ -5,14 +5,15 @@
         akira
       .side-bar__name-box__icons
         .side-bar__name-box__icons__new-group
-        = link_to "/groups/new" do
+        = link_to new_group_path do
           = icon('fas', 'edit', class: "pen") 
         .side-bar__name-box__icons_edit-user
-        = link_to "#" do
+        = link_to edit_user_path(current_user.id) do
           = icon('fas', 'cog', class: "gia")
   .groups
-    = link_to "#", class:"group-box" do
-      .group-box__group-name
-        tech-camp
-      .group-box__text
-        まだメッセージがありません
+    - current_user.groups.each do |group|
+      = link_to "#", class:"group-box" do
+        .group-box__group-name
+          = group.name
+        .group-box__text
+          まだメッセージがありません
