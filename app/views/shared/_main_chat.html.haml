@@ -8,31 +8,33 @@
         .group-info__group-box__member-list__member
           aki
     .group-info__edit
-      =link_to "/groups/1/edit", class:"edit-btn" do
+      = link_to "/groups/1/edit", class:"edit-btn" do
         .edit-btn
           Edit
   .messages
-    .message
-      .message__box
-        .message__box__name
-          aki
-        .message__box__date
-          2020/02/08(Sat) 16:32:56
-      .message__text
-        元気ですか？
-    .message
-      .message__box
-        .message__box__name
-          aki
-        .message__box__date
-          2020/02/08(Sat) 16:32:56
-      .message__text
-        元気ですか？
+    = render @messages
+    -# .message
+    -#   .message__box
+    -#     .message__box__name
+    -#       aki
+    -#     .message__box__date
+    -#       2020/02/08(Sat) 16:32:56
+    -#   .message__text
+    -#     元気ですか？
+    -# .message
+    -#   .message__box
+    -#     .message__box__name
+    -#       aki
+    -#     .message__box__date
+    -#       2020/02/08(Sat) 16:32:56
+    -#   .message__text
+    -#     元気ですか？
   .form
-    %form.new-message
-      .input-box
-        %input{type:"text", class:"input-box__text", placeholder:"メッセージを入力してください"}
-        %label{class:"input-box__image"}
-          = icon("fas","image")
-          %input{type:"file", class:"input-box__image__file"}
-      %input{type:"submit", class:"submit-btn", value:"Send"}
+    = form_for [@group, @message] do |f|
+      .new-message
+        .input-box
+          = f.text_field :content, class:"input-box__text", placeholder:"メッセージを入力してください"
+          = f.label :image, class:"input-box__image" do
+            = icon("fas","image")
+            = f.file_field :image, class:"input-box__image__file"
+        = f.submit "Send", class:"submit-btn"
