@@ -2,33 +2,19 @@
   .group-info
     .group-info__group-box
       .group-info__group-box__group-name
-        akiaki
+        = @group.name
       .group-info__group-box__member-list
         member :
-        .group-info__group-box__member-list__member
-          aki
+        - @group.users. each do |user|
+          .group-info__group-box__member-list__member
+            = user.name
     .group-info__edit
       = link_to "/groups/1/edit", class:"edit-btn" do
         .edit-btn
           Edit
   .messages
     = render @messages
-    -# .message
-    -#   .message__box
-    -#     .message__box__name
-    -#       aki
-    -#     .message__box__date
-    -#       2020/02/08(Sat) 16:32:56
-    -#   .message__text
-    -#     元気ですか？
-    -# .message
-    -#   .message__box
-    -#     .message__box__name
-    -#       aki
-    -#     .message__box__date
-    -#       2020/02/08(Sat) 16:32:56
-    -#   .message__text
-    -#     元気ですか？
+   
   .form
     = form_for [@group, @message] do |f|
       .new-message
