@@ -41,6 +41,7 @@
       background-color: #2f3e51;
       height: calc(100vh - 100px);
 
+
       .group-box{
         height: 65px;
         width: 300px;
@@ -51,11 +52,13 @@
         &__group-name{
           font-size: 15px;
           padding: 10px 0 5px 20px;
+          text-decoration: none;
         }
 
         &__text{
           font-size: 11px;
           padding-left: 20px;
+          text-decoration: none;
         }
       }
     }
@@ -115,21 +118,21 @@
       padding: 46px 40px;
       .message{
         padding-bottom: 46px;
-        &__box{
+        .upper-message{
           display: flex;
           margin-bottom: 10px;
           &__name{
           color: #333333;
           font-size: 16px;
           font-weight: bold;
-         }
+          }
           &__date{
           color: #999999;
           font-size: 12px;
           padding-left: 10px;
-         }
+          }
         }
-        &__text{
+        .lower-message{
           color: #434A54;
           font-size: 14px;
         }
@@ -177,3 +180,4 @@
     }
   }
 }
+
