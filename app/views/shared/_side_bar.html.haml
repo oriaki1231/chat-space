@@ -2,7 +2,7 @@
   .side-bar
     .side-bar__name-box
       .side-bar__name-box__name
-        akira
+        = current_user.name
       .side-bar__name-box__icons
         .side-bar__name-box__icons__new-group
         = link_to new_group_path do
