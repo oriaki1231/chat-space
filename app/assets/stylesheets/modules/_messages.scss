@@ -135,6 +135,10 @@
         .lower-message{
           color: #434A54;
           font-size: 14px;
+          &__image{
+            height: 200px;
+            width: 200px;
+          }
         }
       }
     } 
