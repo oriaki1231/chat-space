@@ -9,7 +9,7 @@
           .group-info__group-box__member-list__member
             = user.name
     .group-info__edit
-      = link_to "/groups/1/edit", class:"edit-btn" do
+      = link_to edit_group_path(@group.id), class:"edit-btn" do
         .edit-btn
           Edit
   .messages
